@@ -1,0 +1,98 @@
+/* Styling untuk keseluruhan halaman */
+body {
+    /* Font yang lebih maskulin dan tebal */
+    font-family: 'Segoe UI Black', 'Arial Black', sans-serif;
+    /* Background aspal gelap dengan tekstur halus */
+    background-color: #1a1a1a;
+    background-image: linear-gradient(45deg, #121212 25%, #1a1a1a 25%, #1a1a1a 50%, #121212 50%, #121212 75%, #1a1a1a 75%, #1a1a1a 100%);
+    background-size: 20px 20px; /* Tekstur mikro racing track */
+    color: #eeeeee;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+/* Container utama - Terinspirasi dari kap mesin (Hood) */
+.card {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #262626;
+    padding: 40px;
+    border-radius: 2px; /* Hampir kotak sempurna, sangat tegas */
+    box-shadow: 10px 10px 0px #0054a6; /* Shadow kaku berwarna Grabber Blue */
+    border: 2px solid #333;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Garis Balap (Racing Stripes) khas Mustang di bagian atas card */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 30px;
+    height: 100%;
+    background: rgba(0, 84, 166, 0.2); /* Biru Mustang transparan */
+    z-index: 0;
+}
+
+/* Header utama - Besar, Tebal, Berwibawa */
+h1 {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    text-align: center;
+    font-size: 38px;
+    text-transform: uppercase;
+    font-style: italic; /* Memberikan kesan kecepatan */
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    /* Efek teks chrome/metalik sederhana */
+    text-shadow: 3px 3px 0px #0054a6; 
+}
+
+/* Paragraf */
+p {
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #cccccc;
+    font-family: 'Segoe UI', sans-serif; /* Font isi tetap bersih agar terbaca */
+    font-weight: 500;
+}
+
+/* Garis pemisah - Seperti marka jalan */
+hr {
+    border: none;
+    height: 4px;
+    background: repeating-linear-gradient(
+      90deg,
+      #0054a6,
+      #0054a6 20px,
+      #ffffff 20px,
+      #ffffff 40px
+    );
+    margin: 25px 0;
+}
+
+/* Greeting - Seperti emblem di body mobil */
+small {
+    display: block;
+    font-style: italic;
+    text-align: right;
+    color: #0054a6; /* Warna aksen biru */
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+/* Efek Hover - Tenaga Kuda! */
+.card:hover {
+    transform: skewX(-2deg); /* Sedikit miring seperti mobil saat akselerasi */
+    box-shadow: 15px 15px 0px #ffffff;
+    border-color: #0054a6;
+}
