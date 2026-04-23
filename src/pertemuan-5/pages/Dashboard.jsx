@@ -1,67 +1,60 @@
-import PageHeader from "../components/PageHeader";
+import { FaChartBar, FaUtensils } from "react-icons/fa";
 
 export default function Dashboard() {
   const chartData = [
-    { day: "Mon", val: "60%", col: "bg-kuning" },
-    { day: "Tue", val: "80%", col: "bg-hijau" },
-    { day: "Wed", val: "40%", col: "bg-biru" },
-    { day: "Thu", val: "90%", col: "bg-merah" },
-    { day: "Fri", val: "70%", col: "bg-kuning" },
+    { day: "Mon", val: "60%", col: "bg-blue-400" },
+    { day: "Tue", val: "80%", col: "bg-cyan-400" },
+    { day: "Wed", val: "40%", col: "bg-blue-600" },
+    { day: "Thu", val: "90%", col: "bg-sky-400" },
+    { day: "Fri", val: "70%", col: "bg-blue-300" },
   ];
 
   return (
-    <div id="dashboard-page" className="space-y-6">
-      <PageHeader />
-
-      {/* 4 STATS CARDS SECTION - Murni ClassName & Emoji */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-        
-        {/* Card 1: Total Orders */}
-        <div className="flex items-center space-x-5 bg-white rounded-[40px] shadow-sm border border-gray-50 p-6">
-          <div className="bg-hijau/20 rounded-full w-16 h-16 flex items-center justify-center text-2xl">
-            📄
-          </div>
-          <div className="flex flex-col">
-            <span className="text-2xl font-bold">75</span>
-            <span className="text-gray-400 text-sm font-medium">Total Orders</span>
-          </div>
-        </div>
-
-        {/* Card 2: Total Delivered */}
-        <div className="flex items-center space-x-5 bg-white rounded-[40px] shadow-sm border border-gray-50 p-6">
-          <div className="bg-biru/20 rounded-full w-16 h-16 flex items-center justify-center text-2xl">
-            📦
-          </div>
-          <div className="flex flex-col">
-            <span className="text-2xl font-bold">357</span>
-            <span className="text-gray-400 text-sm font-medium">Total Delivered</span>
-          </div>
-        </div>
-
-        {/* Card 3: Total Canceled */}
-        <div className="flex items-center space-x-5 bg-white rounded-[40px] shadow-sm border border-gray-50 p-6">
-          <div className="bg-merah/20 rounded-full w-16 h-16 flex items-center justify-center text-2xl">
-            🚫
-          </div>
-          <div className="flex flex-col">
-            <span className="text-2xl font-bold">65</span>
-            <span className="text-gray-400 text-sm font-medium">Total Canceled</span>
-          </div>
-        </div>
-
-        {/* Card 4: Total Revenue */}
-        <div className="flex items-center space-x-5 bg-white rounded-[40px] shadow-sm border border-gray-50 p-6">
-          <div className="bg-kuning/20 rounded-full w-16 h-16 flex items-center justify-center text-2xl">
-            💰
-          </div>
-          <div className="flex flex-col">
-            <span className="text-2xl font-bold">$128</span>
-            <span className="text-gray-400 text-sm font-medium">Total Revenue</span>
-          </div>
-        </div>
-
+    <div className="space-y-6">
+      {/* Page Title */}
+      <div>
+        <h2 className="text-3xl font-black text-blue-900">Dashboard</h2>
+        <p className="text-blue-400 text-sm font-medium">Welcome back, Samantha!</p>
       </div>
 
+      {/* Stats Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { label: "Total Orders", val: "75", icon: "📄", bg: "bg-blue-50" },
+          { label: "Delivered", val: "357", icon: "📦", bg: "bg-cyan-50" },
+          { label: "Canceled", val: "65", icon: "🚫", bg: "bg-indigo-50" },
+          { label: "Revenue", val: "$128", icon: "💰", bg: "bg-sky-50" },
+        ].map((card, i) => (
+          <div key={i} className="bg-white p-6 rounded-[35px] shadow-sm border border-blue-50 flex items-center space-x-4">
+            <div className={`${card.bg} p-4 rounded-2xl text-2xl`}>{card.icon}</div>
+            <div><p className="text-2xl font-black text-blue-900">{card.val}</p><p className="text-blue-300 text-xs font-bold uppercase">{card.label}</p></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Improvisasi Baru (Chart & Table) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white p-8 rounded-[40px] shadow-sm border border-blue-50">
+          <h3 className="font-black text-blue-900 text-xl flex items-center gap-2 mb-8"><FaChartBar /> Blue Progress</h3>
+          <div className="flex items-end justify-between h-40 gap-3 px-2">
+            {chartData.map((d, i) => (
+              <div key={i} className="flex flex-col items-center gap-2 w-full">
+                <div className={`${d.col} w-full rounded-t-2xl`} style={{ height: d.val }}></div>
+                <span className="text-[10px] font-bold text-blue-300">{d.day}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="bg-white p-8 rounded-[40px] shadow-sm border border-blue-50">
+          <h3 className="font-black text-blue-900 text-xl flex items-center gap-2 mb-6"><FaUtensils /> Recent Treats</h3>
+          <table className="w-full text-sm font-bold text-blue-900">
+            <tbody>
+              <tr className="border-b border-blue-50"><td className="py-4">Ahmad Dhani</td><td className="py-4 text-blue-400">Blueberry Pie</td><td className="text-right text-blue-600">FRESH</td></tr>
+              <tr><td className="py-4">Siti Badriah</td><td className="py-4 text-cyan-500">Icy Lemon</td><td className="text-right text-cyan-600">COLD</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 }

@@ -2,7 +2,6 @@
 
 @font-face {
   font-family: 'Barlow';
-  /* Pastikan file font ada di folder public/font/ */
   src: url('/font/Barlow-BlackItalic.ttf') format('truetype');
 }
 
@@ -15,16 +14,17 @@
   --font-barlow: "Barlow", sans-serif;
   --font-poppins: "Poppins", sans-serif;
 
-  --color-latar: #f3f4f6;
-  --color-teks: #374151;
-  --color-teks-samping: #6b7280;
-  --color-garis: #e5e7eb;
-  --color-hijau: #00b074;
-  --color-merah: #ef4444;
-  --color-biru: #3b82f6;
-  --color-kuning: #f59e0b;
+
+  --color-latar: #F0F7FF;          
+  --color-teks: #1E3A8A;           
+  --color-teks-samping: #64748B;   
+  --color-garis: #E2E8F0;     
+  --color-hijau: #3B82F6;          
+  --color-biru: #0EA5E9;          
+  --color-kuning: #7DD3FC;         
+  --color-merah: #F87171;          
 }
 
 body {
-  @apply font-barlow;
+  @apply font-barlow bg-latar text-teks;
 }
