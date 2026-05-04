@@ -1,6 +1,6 @@
 import { FaChartBar, FaUtensils } from "react-icons/fa";
 // 1. Import PageHeader-nya
-import PageHeader from "../components/PageHeader"; 
+import PageHeader from "../components/PageHeader";
 
 export default function Dashboard() {
   const chartData = [
@@ -13,11 +13,13 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6">
-      {/* 2. GANTI bagian Page Title lama dengan PageHeader */}
-      <PageHeader title="Dashboard" />
+      <PageHeader
+        title="Dashboard"
+        breadcrumb="Hi, Samantha. Welcome back to Sedap Admin!"
+      />
 
       {/* Stats Cards dan sisanya tetap sama di bawah ini */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4"> 
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
         {/* Tambahkan px-4 di atas agar sejajar dengan padding PageHeader */}
         {[
           { label: "Total Orders", val: "75", icon: "📄", bg: "bg-blue-50" },
