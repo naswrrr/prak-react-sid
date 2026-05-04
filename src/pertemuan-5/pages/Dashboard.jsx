@@ -1,4 +1,6 @@
 import { FaChartBar, FaUtensils } from "react-icons/fa";
+// 1. Import PageHeader-nya
+import PageHeader from "../components/PageHeader"; 
 
 export default function Dashboard() {
   const chartData = [
@@ -11,14 +13,12 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6">
-      {/* Page Title */}
-      <div>
-        <h2 className="text-3xl font-black text-blue-900">Dashboard</h2>
-        <p className="text-blue-400 text-sm font-medium">Welcome back, Samantha!</p>
-      </div>
+      {/* 2. GANTI bagian Page Title lama dengan PageHeader */}
+      <PageHeader title="Dashboard" />
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Stats Cards dan sisanya tetap sama di bawah ini */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4"> 
+        {/* Tambahkan px-4 di atas agar sejajar dengan padding PageHeader */}
         {[
           { label: "Total Orders", val: "75", icon: "📄", bg: "bg-blue-50" },
           { label: "Delivered", val: "357", icon: "📦", bg: "bg-cyan-50" },
@@ -32,8 +32,9 @@ export default function Dashboard() {
         ))}
       </div>
 
-      {/* Improvisasi Baru (Chart & Table) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Chart & Table */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+        {/* Tambahkan px-4 juga di sini */}
         <div className="bg-white p-8 rounded-[40px] shadow-sm border border-blue-50">
           <h3 className="font-black text-blue-900 text-xl flex items-center gap-2 mb-8"><FaChartBar /> Blue Progress</h3>
           <div className="flex items-end justify-between h-40 gap-3 px-2">

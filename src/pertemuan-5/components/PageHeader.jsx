@@ -1,11 +1,11 @@
 import { FaCalendarAlt } from "react-icons/fa";
 
-export default function PageHeader() {
+export default function PageHeader({ title = "Dashboard" }) { 
   return (
     <div id="pageheader-container" className="flex items-center justify-between p-4 mb-4">
-      {/* Bagian Kiri: Title & Greeting (Sesuai gambar temanmu) */}
       <div id="pageheader-left" className="flex flex-col">
-        <h2 id="page-title" className="text-3xl font-black text-blue-900">Dashboard</h2>
+        {/* Gunakan variabel title di sini */}
+        <h2 id="page-title" className="text-3xl font-black text-blue-900">{title}</h2>
         <p id="greeting-text" className="text-blue-400 text-sm font-semibold mt-1">
           Hi, Samantha. Welcome back to Sedap Admin!
         </p>
