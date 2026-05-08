@@ -5,11 +5,9 @@ import { BrowserRouter } from "react-router-dom";
 import "./pertemuan-5/assets/tailwind.css"; 
 import App from "./App.jsx";
 
+// ✅ Benar: Langsung merender BrowserRouter
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    {/* 2. Bungkus App dengan BrowserRouter */}
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>
 );
