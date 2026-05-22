@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import ErrorPage from "./pertemuan-5/pages/ErrorPage";
 import React, { Suspense } from "react";
 import Loading from "./components/Loading";
+import Products from "./pages/Products";
 
 // Import halaman-halamannya
 // import Dashboard from "./pertemuan-5/pages/Dashboard";
@@ -22,6 +23,7 @@ const Login = React.lazy(() => import("./pages/auth/login"))
 const Register = React.lazy(() => import("./pages/auth/Register"))
 const Forgot = React.lazy(() => import("./pages/auth/Forgot"))
 const AuthLayout = React.lazy(() => import("./layouts/AuthLayout"))
+const ProductDetail = React.lazy(() => import("./pages/ProductDetail"))
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/customers" element={<Customers />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDetail />} /> 
 
           {/* --- TAMBAHKAN ROUTE ERROR DI SINI --- */}
           <Route

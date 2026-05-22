@@ -3,7 +3,8 @@ import {
   FaClipboardList, 
   FaUserFriends, 
   FaPlus,
-  FaExclamationTriangle 
+  FaExclamationTriangle, 
+  FaBoxOpen
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
@@ -13,6 +14,7 @@ export default function Sidebar() {
     { name: "Dashboard", icon: <FaHome />, path: "/" },
     { name: "Orders", icon: <FaClipboardList />, path: "/orders" },
     { name: "Customers", icon: <FaUserFriends />, path: "/customers" },
+    { name: "Products", icon: <FaBoxOpen />, path: "/products" },
   ];
 
   // 2. Menu Error
