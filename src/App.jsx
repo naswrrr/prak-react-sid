@@ -5,21 +5,12 @@ import React, { Suspense } from "react";
 import Loading from "./components/Loading";
 import Products from "./pages/Products";
 
-// Import halaman-halamannya
-// import Dashboard from "./pertemuan-5/pages/Dashboard";
-// import Orders from "./pertemuan-5/pages/Orders";
-// import Customers from "./pertemuan-5/pages/Customers";
-// import MainLayout from "./layouts/MainLayout";
-// import Login from "./pages/auth/login";
-// import Register from "./pages/auth/Register";
-// import Forgot from "./pages/auth/Forgot";
-// import AuthLayout from "./layouts/AuthLayout";
 
 const Dashboard = React.lazy(() => import("./pertemuan-5/pages/Dashboard"))
 const Orders = React.lazy(() => import("./pertemuan-5/pages/Orders"))
 const Customers = React.lazy(() => import("./pertemuan-5/pages/Customers"))
 const MainLayout = React.lazy(() => import("./layouts/MainLayout"))
-const Login = React.lazy(() => import("./pages/auth/login"))
+const Login = React.lazy(() => import("./pages/auth/Login"))
 const Register = React.lazy(() => import("./pages/auth/Register"))
 const Forgot = React.lazy(() => import("./pages/auth/Forgot"))
 const AuthLayout = React.lazy(() => import("./layouts/AuthLayout"))
