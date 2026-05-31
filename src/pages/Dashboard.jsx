@@ -1,5 +1,4 @@
 import { FaChartBar, FaUtensils } from "react-icons/fa";
-// 1. Import PageHeader-nya
 import PageHeader from "../components/PageHeader";
 
 export default function Dashboard() {
@@ -12,7 +11,10 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="space-y-6">
+    // 1. Wrapper utama: Gunakan p-4 dan space-y-6 (SAMA DENGAN ORDERS)
+    <div className="p-4 space-y-6">
+      
+      {/* 2. Pemanggilan PageHeader tanpa children (akan otomatis muncul Filter Periode) */}
       <PageHeader
         title="Dashboard"
         breadcrumb="Hi, Samantha. Welcome back to Sedap Admin!"

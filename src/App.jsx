@@ -6,15 +6,16 @@ import Loading from "./components/Loading";
 import Products from "./pages/Products";
 
 
-const Dashboard = React.lazy(() => import("./pertemuan-5/pages/Dashboard"))
-const Orders = React.lazy(() => import("./pertemuan-5/pages/Orders"))
-const Customers = React.lazy(() => import("./pertemuan-5/pages/Customers"))
+const Dashboard = React.lazy(() => import("./pages/Dashboard"))
+const Orders = React.lazy(() => import("./pages/Orders"))
+const Customers = React.lazy(() => import("./pages/Customers"))
 const MainLayout = React.lazy(() => import("./layouts/MainLayout"))
 const Login = React.lazy(() => import("./pages/auth/Login"))
 const Register = React.lazy(() => import("./pages/auth/Register"))
 const Forgot = React.lazy(() => import("./pages/auth/Forgot"))
 const AuthLayout = React.lazy(() => import("./layouts/AuthLayout"))
 const ProductDetail = React.lazy(() => import("./pages/ProductDetail"))
+const Components = React.lazy(() => import("./pages/Components"))
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/customers" element={<Customers />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetail />} /> 
+          <Route path="/components" element={<Components />} />
 
           {/* --- TAMBAHKAN ROUTE ERROR DI SINI --- */}
           <Route
