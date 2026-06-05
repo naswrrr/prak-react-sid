@@ -15,7 +15,7 @@ export default function Header() {
           className="relative w-full max-w-md cursor-pointer group"
         >
           <div className="w-full p-2 bg-blue-50/50 border border-blue-100 rounded-lg text-blue-300 flex justify-between items-center px-4 text-sm group-hover:border-blue-300 transition-all">
-            <span>Search Here...</span>
+            <span>Cari disini...</span>
             <FaSearch />
           </div>
         </div>
