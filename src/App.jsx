@@ -16,6 +16,7 @@ const Forgot = React.lazy(() => import("./pages/auth/Forgot"))
 const AuthLayout = React.lazy(() => import("./layouts/AuthLayout"))
 const ProductDetail = React.lazy(() => import("./pages/ProductDetail"))
 const Components = React.lazy(() => import("./pages/Components"))
+const FiturXyz = React.lazy(() => import("./pages/FiturXyz"))
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetail />} /> 
           <Route path="/components" element={<Components />} />
-
+          <Route path="/fitur-xyz" element={<FiturXyz />} />
           {/* --- TAMBAHKAN ROUTE ERROR DI SINI --- */}
           <Route
             path="/error-400"
