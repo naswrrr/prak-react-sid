@@ -21,10 +21,7 @@ export default function Header() {
         </div>
 
         <div className="flex items-center space-x-4">
-          <div className="p-3 bg-blue-100 text-blue-600 rounded-xl relative cursor-pointer">
-            <FaBell /> 
-            <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-[9px] px-1.5 rounded-full border-2 border-white">21</span>
-          </div>
+          
           <div className="p-3 bg-red-100 text-red-500 rounded-xl cursor-pointer"> <FaCog /> </div>
           
           <div className="relative border-l pl-4 border-blue-100">
