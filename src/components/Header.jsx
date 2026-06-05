@@ -15,12 +15,47 @@ export default function Header() {
           className="relative w-full max-w-md cursor-pointer group"
         >
           <div className="w-full p-2 bg-blue-50/50 border border-blue-100 rounded-lg text-blue-300 flex justify-between items-center px-4 text-sm group-hover:border-blue-300 transition-all">
-            <span>Cari disini...</span>
+            <span>Search Here...</span>
             <FaSearch />
           </div>
         </div>
 
-        
+        {/* Bagian Kanan Header: Notifikasi, Pengaturan, & Profil */}
+        <div className="flex items-center space-x-4">
+          {/* Tombol Notifikasi */}
+          <div className="p-3 bg-blue-100 text-blue-600 rounded-xl relative cursor-pointer">
+            <FaBell /> 
+            <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-[9px] px-1.5 rounded-full border-2 border-white">21</span>
+          </div>
+
+          {/* Tombol Settings */}
+          <div className="p-3 bg-red-100 text-red-500 rounded-xl cursor-pointer">
+            <FaCog />
+          </div>
+          
+          {/* Profil Dropdown */}
+          <div className="relative border-l pl-4 border-blue-100">
+            <div onClick={() => setIsProfileOpen(!isProfileOpen)} className="flex items-center space-x-3 cursor-pointer">
+              <div className="text-right">
+                <p className="text-sm font-bold text-blue-900">Samantha</p>
+                <p className="text-[10px] text-blue-400 font-bold">Admin Comel</p>
+              </div>
+              <img src="img/neponcing.jpeg" className="w-10 h-10 rounded-2xl border-2 border-blue-200" alt="profile" />
+            </div>
+
+            {/* Konten Dropdown Profile */}
+            {isProfileOpen && (
+              <div className="absolute right-0 mt-4 w-48 bg-white rounded-2xl shadow-xl border border-blue-50 z-50 overflow-hidden">
+                <div className="p-4 hover:bg-blue-50 cursor-pointer flex items-center gap-3 text-sm font-bold text-slate-600">
+                  <FaUser className="text-blue-400" /> Profile
+                </div>
+                <div className="p-4 hover:bg-red-50 cursor-pointer flex items-center gap-3 text-sm font-bold text-red-500 border-t border-blue-50">
+                  <FaSignOutAlt /> Log Out
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </header>
 
       {/* --- IMPROVISASI: MODAL QUICK FIND --- */}
