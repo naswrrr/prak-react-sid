@@ -6,7 +6,8 @@ import {
   FaExclamationTriangle, 
   FaBoxOpen,
   FaLayerGroup,
-  FaPuzzlePiece
+  FaPuzzlePiece,
+  FaRegStickyNote
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
@@ -19,6 +20,7 @@ export default function Sidebar() {
     { name: "Products", icon: <FaBoxOpen />, path: "/products" },
     { name: "Components", icon: <FaLayerGroup />, path: "/components" },
     { name: "Fitur XYZ", icon: <FaPuzzlePiece />, path: "/fitur-xyz" },
+    { name: "Notes", icon: <FaRegStickyNote />, path: "/notes" }
   ];
 
   // 2. Menu Error
